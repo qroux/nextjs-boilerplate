@@ -1,18 +1,19 @@
 import { ReactNode } from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div
       style={{
-        border: '5px solid red',
         boxSizing: 'border-box',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
       }}>
+      <Navbar />
       {children}
+      <Footer />
     </div>
   );
 }
