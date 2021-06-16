@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-export default (reducer, actions, initialState) => {
+export default (reducer: any, actions: any, initialState: any) => {
   const Context = React.createContext(initialState);
 
   const Provider = ({ children }: { children: React.ReactNode }) => {
