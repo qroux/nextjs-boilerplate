@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import AnimatedPage from '../components/AnimatedPage';
+import AnimatedPage from '../src/components/AnimatedPage';
 
 export default function Home() {
   return (

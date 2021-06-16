@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Animations } from '../styles/animations';
+import { Animations } from '../../styles/animations';
 
 export default function AnimatedPage({
   children,
