@@ -52,7 +52,6 @@ export default function Home() {
             </a>
           </h1>
           <StateCheck state={authenticated} label='Authenticated' />
-
           <StateCheck state={darkMode} label='Dark Mode' />
           <Link href='/test'>
             <a className={styles.button}>Page transition test</a>
