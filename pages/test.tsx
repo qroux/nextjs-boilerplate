@@ -4,7 +4,7 @@ import AnimatedPage from '../components/AnimatedPage';
 export default function Contact() {
   return (
     <AnimatedPage>
-      <h1>Contact Page component</h1>
+      <h1>TO DELETE => Navigation + Page transition test</h1>
     </AnimatedPage>
   );
 }

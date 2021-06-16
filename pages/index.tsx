@@ -39,11 +39,8 @@ export default function Home() {
               Next.js!
             </a>
           </h1>
-          <Link href='/contact'>
-            <a className={styles.button}>Contacts</a>
-          </Link>
-          <Link href='/legal'>
-            <a className={styles.button}>Legal</a>
+          <Link href='/test'>
+            <a className={styles.button}>Page transition test</a>
           </Link>
         </main>
       </div>
