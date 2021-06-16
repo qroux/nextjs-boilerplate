@@ -36,6 +36,7 @@ export const darkTheme = (dark: boolean): ThemeOptions => {
       text: {
         primary: paletteColors.text,
       },
+
       // ...
     },
   });

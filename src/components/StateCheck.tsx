@@ -2,8 +2,8 @@ export default function Statecheck({
   state,
   label,
 }: {
-  state: boolean | null;
-  label: String | null;
+  state?: boolean;
+  label?: String;
 }) {
   return (
     <div
