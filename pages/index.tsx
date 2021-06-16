@@ -1,9 +1,21 @@
+import { useContext } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import AnimatedPage from '../src/components/AnimatedPage';
+import { Context as AuthContext } from '../src/globalState/context/AuthContext';
+import { Context as AppContext } from '../src/globalState/context/AppContext';
+import StateCheck from '../src/components/StateCheck';
 
 export default function Home() {
+  const {
+    state: { authenticated },
+  } = useContext(AuthContext);
+
+  const {
+    state: { darkMode },
+  } = useContext(AppContext);
+
   return (
     <AnimatedPage>
       <div
@@ -39,6 +51,9 @@ export default function Home() {
               Next.js!
             </a>
           </h1>
+          <StateCheck state={authenticated} label='Authenticated' />
+
+          <StateCheck state={darkMode} label='Dark Mode' />
           <Link href='/test'>
             <a className={styles.button}>Page transition test</a>
           </Link>

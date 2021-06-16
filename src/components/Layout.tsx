@@ -6,6 +6,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div
       style={{
         minHeight: '100vh',
+        boxSizing: 'border-box',
       }}>
       <Navbar />
       {children}
