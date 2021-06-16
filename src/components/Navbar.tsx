@@ -17,7 +17,11 @@ export default function Navbar() {
   } = useContext(AppContext);
 
   return (
-    <AppBar position='static' color='default' elevation={1}>
+    <AppBar
+      position='static'
+      color='default'
+      elevation={1}
+      style={{ transition: 'all 0.3s linear' }}>
       <Toolbar variant='dense'>
         <Link href='/' passHref>
           <a>

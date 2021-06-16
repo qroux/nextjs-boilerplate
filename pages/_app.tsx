@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Provider as AuthProvider } from '../src/globalState/context/AuthContext';
 import { Provider as AppProvider } from '../src/globalState/context/AppContext';
-import '../styles/globals.css';
+
 import type { AppProps } from 'next/app';
 import Layout from '../src/components/Layout';
 import { AnimatePresence } from 'framer-motion';

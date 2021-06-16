@@ -18,6 +18,7 @@ export const paletteColorsLight = {
 
 export const darkTheme = (dark: boolean): ThemeOptions => {
   const paletteColors = dark ? paletteColorsDark : paletteColorsLight;
+
   return createMuiTheme({
     palette: {
       type: dark ? 'dark' : 'light',
@@ -36,8 +37,15 @@ export const darkTheme = (dark: boolean): ThemeOptions => {
       text: {
         primary: paletteColors.text,
       },
-
-      // ...
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          body: {
+            transition: 'all 0.3s linear',
+          },
+        },
+      },
     },
   });
 };
