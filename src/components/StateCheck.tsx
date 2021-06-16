@@ -1,4 +1,10 @@
-export default function Statecheck({ state, label }) {
+export default function Statecheck({
+  state,
+  label,
+}: {
+  state: boolean | null;
+  label: String | null;
+}) {
   return (
     <div
       style={{
