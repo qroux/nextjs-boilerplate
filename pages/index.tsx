@@ -6,10 +6,11 @@ import AnimatedPage from '../src/components/AnimatedPage';
 import { Context as AuthContext } from '../src/globalState/context/AuthContext';
 import { Context as AppContext } from '../src/globalState/context/AppContext';
 import StateCheck from '../src/components/StateCheck';
+import { Button } from '@material-ui/core';
 
 export default function Home() {
   const {
-    state: { authenticated },
+    state: { token },
   } = useContext(AuthContext);
 
   const {
@@ -51,11 +52,24 @@ export default function Home() {
               Next.js!
             </a>
           </h1>
-          <StateCheck state={authenticated} label='Authenticated' />
+
+          <div>{token ? token.split('.')[0] : null}</div>
+
           <StateCheck state={darkMode} label='Dark Mode' />
-          <Link href='/test'>
-            <a>Page transition test</a>
-          </Link>
+
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '12rem',
+            }}>
+            <Link href='/login' passHref>
+              <Button variant='contained'>Login</Button>
+            </Link>
+            <Link href='/register' passHref>
+              <Button variant='contained'>Register</Button>
+            </Link>
+          </div>
         </main>
       </div>
     </AnimatedPage>

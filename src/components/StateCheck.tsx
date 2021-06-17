@@ -1,8 +1,8 @@
 export default function Statecheck({
-  state,
+  state = false,
   label,
 }: {
-  state?: boolean;
+  state?: Boolean;
   label?: String;
 }) {
   return (
@@ -11,7 +11,8 @@ export default function Statecheck({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        width: '10rem',
+
+        height: '5rem',
       }}>
       <div
         style={{

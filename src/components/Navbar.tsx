@@ -19,16 +19,12 @@ export default function Navbar() {
   return (
     <AppBar
       position='static'
-      color='default'
-      elevation={1}
+      color='transparent'
+      elevation={0}
       style={{ transition: 'all 0.3s linear' }}>
       <Toolbar variant='dense'>
         <Link href='/' passHref>
-          <a>
-            <Typography variant='h6' color='initial'>
-              Home
-            </Typography>
-          </a>
+          <Button color='inherit'>Home</Button>
         </Link>
         <FormControlLabel
           style={{ marginLeft: 'auto' }}

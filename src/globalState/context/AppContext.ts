@@ -1,21 +1,25 @@
 import createDataContext from './createDataContext';
-import { types } from '../actions/types';
+import { actionTypes } from '../actions/app/appTypes';
+import { switchTheme } from '../actions/app/appActions';
+import Cookies from 'js-cookie';
+
+// UTILS
+const fetchCookie = () => {
+  const cookie = Cookies.get('DARK_MODE');
+  return !cookie || cookie === 'false' ? false : true;
+};
 
 const AppReducer = (state: any, action: any) => {
   switch (action.type) {
-    case types.SWITCH_THEME:
+    case actionTypes.SWITCH_THEME:
       return { ...state, darkMode: !state.darkMode };
     default:
       return state;
   }
 };
 
-const switchTheme = (dispatch: Function) => async () => {
-  dispatch({ type: types.SWITCH_THEME });
-};
-
 export const { Context, Provider } = createDataContext(
   AppReducer,
   { switchTheme },
-  { lang: 'en', darkMode: true }
+  { lang: 'en', darkMode: fetchCookie() }
 );
