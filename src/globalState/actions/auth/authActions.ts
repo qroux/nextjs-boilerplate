@@ -2,6 +2,7 @@ import { actionTypes } from './authTypes';
 import AuthApi from '../../../services/Axios';
 import { formTypes } from '../../../components/types/formTypes';
 import Cookies from 'js-cookie';
+import Router from 'next/router';
 
 const genExpiration = () => {
   const expiration = new Date();
@@ -26,6 +27,7 @@ export const authUser = (dispatch: Function) => async ({
       expires: genExpiration(),
       sameSite: 'strict',
     });
+    Router.push('/');
   } catch (err) {
     dispatch({
       type: actionTypes.AUTH_ERROR,
