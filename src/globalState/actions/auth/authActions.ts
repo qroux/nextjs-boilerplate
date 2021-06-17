@@ -3,12 +3,7 @@ import AuthApi from '../../../services/Axios';
 import { formTypes } from '../../../components/types/formTypes';
 import Cookies from 'js-cookie';
 import Router from 'next/router';
-
-const genExpiration = () => {
-  const expiration = new Date();
-  expiration.setMinutes(expiration.getMinutes() + 60);
-  return expiration;
-};
+import { genExpiration } from '../utils';
 
 export const authUser = (dispatch: Function) => async ({
   type,
@@ -22,11 +17,14 @@ export const authUser = (dispatch: Function) => async ({
   try {
     const path = type === formTypes.REGISTER ? 'signup' : 'login';
     const response = await AuthApi.post(path, { email, password });
+
     dispatch({ type: actionTypes.AUTH_USER, payload: response.data.token });
+
     Cookies.set('AUTH_JWT_TOKEN', response.data.token, {
       expires: genExpiration(),
       sameSite: 'strict',
     });
+
     Router.push('/');
   } catch (err) {
     dispatch({

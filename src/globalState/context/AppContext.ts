@@ -1,13 +1,6 @@
 import createDataContext from './createDataContext';
 import { actionTypes } from '../actions/app/appTypes';
 import { switchTheme } from '../actions/app/appActions';
-import Cookies from 'js-cookie';
-
-// UTILS
-const fetchCookie = () => {
-  const cookie = Cookies.get('DARK_MODE');
-  return !cookie || cookie === 'false' ? false : true;
-};
 
 const AppReducer = (state: any, action: any) => {
   switch (action.type) {
@@ -21,5 +14,5 @@ const AppReducer = (state: any, action: any) => {
 export const { Context, Provider } = createDataContext(
   AppReducer,
   { switchTheme },
-  { lang: 'en', darkMode: fetchCookie() }
+  { lang: 'en', darkMode: false }
 );

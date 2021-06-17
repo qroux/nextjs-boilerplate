@@ -1,6 +1,12 @@
 import { actionTypes } from './appTypes';
-import AuthApi from '../../../services/Axios';
+import Cookies from 'js-cookie';
+import { genExpiration } from '../utils';
 
-export const switchTheme = (dispatch: Function) => async () => {
+export const switchTheme = (dispatch: Function) => async (current: any) => {
   dispatch({ type: actionTypes.SWITCH_THEME });
+
+  Cookies.set('DARK_MODE', current, {
+    expires: genExpiration(),
+    sameSite: 'strict',
+  });
 };

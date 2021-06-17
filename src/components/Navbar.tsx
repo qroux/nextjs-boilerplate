@@ -31,7 +31,7 @@ export default function Navbar() {
           control={
             <Switch
               checked={darkMode}
-              onChange={switchTheme}
+              onChange={() => switchTheme(!darkMode)}
               name='darkmode'
               color='primary'
             />
