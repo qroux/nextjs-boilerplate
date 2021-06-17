@@ -1,13 +1,6 @@
 import createDataContext from './createDataContext';
 import { actionTypes } from '../actions/auth/authTypes';
 import { authUser, fetchUserToken } from '../actions/auth/authActions';
-import Cookies from 'js-cookie';
-
-// UTILS
-// const fetchCookie = () => {
-//   const cookie = Cookies.get('AUTH_JWT_TOKEN');
-//   return !cookie || cookie === 'false' ? undefined : cookie;
-// };
 
 const AuthReducer = (state: any, action: any) => {
   switch (action.type) {

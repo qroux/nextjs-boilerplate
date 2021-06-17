@@ -1,10 +1,4 @@
-export default function Statecheck({
-  state,
-  label,
-}: {
-  state?: Boolean;
-  label?: String;
-}) {
+const Statecheck = ({ state, label }: { state?: Boolean; label?: String }) => {
   return (
     <div
       style={{
@@ -25,4 +19,6 @@ export default function Statecheck({
       {label}
     </div>
   );
-}
+};
+
+export default Statecheck;
