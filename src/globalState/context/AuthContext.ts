@@ -1,13 +1,13 @@
 import createDataContext from './createDataContext';
 import { actionTypes } from '../actions/auth/authTypes';
-import { authUser } from '../actions/auth/authActions';
+import { authUser, fetchUserToken } from '../actions/auth/authActions';
 import Cookies from 'js-cookie';
 
 // UTILS
-const fetchCookie = () => {
-  const cookie = Cookies.get('AUTH_JWT_TOKEN');
-  return !cookie || cookie === 'false' ? undefined : cookie;
-};
+// const fetchCookie = () => {
+//   const cookie = Cookies.get('AUTH_JWT_TOKEN');
+//   return !cookie || cookie === 'false' ? undefined : cookie;
+// };
 
 const AuthReducer = (state: any, action: any) => {
   switch (action.type) {
@@ -26,6 +26,6 @@ const AuthReducer = (state: any, action: any) => {
 
 export const { Context, Provider } = createDataContext(
   AuthReducer,
-  { authUser },
-  { errorMsg: '', token: fetchCookie() }
+  { authUser, fetchUserToken },
+  { errorMsg: '', token: '' }
 );

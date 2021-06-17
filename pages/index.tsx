@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -11,11 +11,16 @@ import { Button } from '@material-ui/core';
 export default function Home() {
   const {
     state: { token },
+    fetchUserToken,
   } = useContext(AuthContext);
 
   const {
     state: { darkMode },
   } = useContext(AppContext);
+
+  useEffect(() => {
+    fetchUserToken();
+  }, []);
 
   return (
     <AnimatedPage>
@@ -53,9 +58,10 @@ export default function Home() {
             </a>
           </h1>
 
-          <div>{token ? token.split('.')[0] : null}</div>
-
-          <StateCheck state={darkMode} label='Dark Mode' />
+          <div style={{ width: '15 rem' }}>
+            <StateCheck state={token} label={'Token: ' + token} />
+            <StateCheck state={darkMode} label='Dark Mode' />
+          </div>
 
           <div
             style={{

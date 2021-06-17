@@ -33,3 +33,10 @@ export const authUser = (dispatch: Function) => async ({
     });
   }
 };
+
+export const fetchUserToken = (dispatch: Function) => async () => {
+  const cookie = Cookies.get('AUTH_JWT_TOKEN');
+  const result = !cookie || cookie === 'false' ? undefined : cookie;
+
+  if (result) dispatch({ type: actionTypes.AUTH_USER, payload: cookie });
+};
