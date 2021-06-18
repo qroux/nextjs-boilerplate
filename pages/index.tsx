@@ -70,10 +70,14 @@ export default function Home() {
               width: '12rem',
             }}>
             <Link href='/login' passHref>
-              <Button variant='contained'>Login</Button>
+              <Button variant='contained' name='login'>
+                Login
+              </Button>
             </Link>
             <Link href='/register' passHref>
-              <Button variant='contained'>Register</Button>
+              <Button variant='contained' name='register'>
+                Register
+              </Button>
             </Link>
           </div>
         </main>

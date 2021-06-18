@@ -9,6 +9,7 @@ const Statecheck = ({ state, label }: { state?: Boolean; label?: String }) => {
         lineBreak: 'anywhere',
       }}>
       <div
+        id='indicator'
         style={{
           borderRadius: '100%',
           height: '0.5rem',
