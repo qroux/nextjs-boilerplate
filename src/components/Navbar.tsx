@@ -34,7 +34,7 @@ export default function Navbar() {
               checked={darkMode}
               onChange={() => switchTheme(!darkMode)}
               name='darkmode'
-              color='primary'
+              color='secondary'
             />
           }
           label='Dark Mode'

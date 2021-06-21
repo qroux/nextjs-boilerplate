@@ -1,16 +1,16 @@
 import { createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
 
 export const paletteColorsDark = {
-  primary: '#0f4c75',
-  secondary: '#3282b8',
-  error: '#E44C65',
+  primary: '#003952',
+  secondary: '#01638D',
+  error: '#FB9F89',
   background: '#1b262c',
-  text: '#bbe1fa',
+  text: '#EADEDA',
 };
 
 export const paletteColorsLight = {
   primary: '#6886c5',
-  secondary: '#ffe0ac',
+  secondary: '#ffbf99',
   error: '#E44C65',
   background: '#f9f9f9',
   text: '#050505',

@@ -1,11 +1,11 @@
-import { Container } from '@material-ui/core';
 import AnimatedPage from '../src/components/AnimatedPage';
-import AuthForm from '../src/components/AuthForm';
+import AuthPage from '../src/components/AuthPage';
+import { formTypes } from '../src/components/types/formTypes';
 
 export default function Login() {
   return (
     <AnimatedPage>
-      <AuthForm />
+      <AuthPage type={formTypes.LOGIN} />
     </AnimatedPage>
   );
 }

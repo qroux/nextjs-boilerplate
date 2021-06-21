@@ -1,11 +1,11 @@
 import AnimatedPage from '../src/components/AnimatedPage';
-import AuthForm from '../src/components/AuthForm';
+import AuthPage from '../src/components/AuthPage';
 import { formTypes } from '../src/components/types/formTypes';
 
 export default function Register() {
   return (
     <AnimatedPage>
-      <AuthForm type={formTypes.REGISTER} />
+      <AuthPage type={formTypes.REGISTER} />
     </AnimatedPage>
   );
 }

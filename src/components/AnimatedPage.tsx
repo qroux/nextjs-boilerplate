@@ -9,7 +9,12 @@ export default function AnimatedPage({ children }: { children: any }) {
       initial={'hidden'}
       animate={'visible'}
       exit={'exit'}>
-      <Container maxWidth='xl'>{children}</Container>
+      <Container
+        maxWidth='xl'
+        disableGutters={true}
+        style={{ minHeight: '95vh' }}>
+        {children}
+      </Container>
     </motion.div>
   );
 }

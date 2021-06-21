@@ -64,6 +64,7 @@ export default function Home() {
             <Link href='/login' passHref>
               <Button
                 variant='contained'
+                color='secondary'
                 name='login'
                 style={{ width: '10rem' }}>
                 Login
@@ -72,6 +73,7 @@ export default function Home() {
             <Link href='/register' passHref>
               <Button
                 variant='contained'
+                color='secondary'
                 name='register'
                 style={{ width: '10rem', marginTop: '0.5rem' }}>
                 Register

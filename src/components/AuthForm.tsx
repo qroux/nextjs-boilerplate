@@ -31,46 +31,62 @@ export default function AuthForm({
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 0.3,
+      }}>
       <Typography variant='h4' color='textPrimary'>
         {type}
       </Typography>
-      <Typography variant='body1' color='secondary'>
-        {errorMsg ? errorMsg : null}
-      </Typography>
+      <div style={{ width: '80%' }}>
+        <Typography variant='body1' color='error'>
+          {errorMsg ? errorMsg : null}
+        </Typography>
 
-      <form
-        noValidate
-        autoComplete='off'
-        onSubmit={onSubmitHandler}
-        name='auth-form'>
-        <FormControl>
-          <TextField
-            required
-            id='email-input'
-            label='Email'
-            type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            required
-            id='password-input'
-            label='Password'
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button
-            type='submit'
-            variant='contained'
-            color='secondary'
-            style={{ marginTop: '1rem' }}
-            startIcon={<SendIcon />}>
-            Register
-          </Button>
-        </FormControl>
-      </form>
+        <form
+          noValidate
+          autoComplete='off'
+          onSubmit={onSubmitHandler}
+          name='auth-form'
+          style={{ width: '100%' }}>
+          <FormControl fullWidth={true}>
+            <TextField
+              required
+              id='email-input'
+              label='Email'
+              type='email'
+              variant='outlined'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ marginTop: '1rem' }}
+            />
+            <TextField
+              required
+              id='password-input'
+              label='Password'
+              type='password'
+              variant='outlined'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ marginTop: '1rem' }}
+              color='primary'
+            />
+            <Button
+              type='submit'
+              variant='contained'
+              size='large'
+              color='secondary'
+              style={{ marginTop: '3rem' }}
+              startIcon={<SendIcon />}>
+              Register
+            </Button>
+          </FormControl>
+        </form>
+      </div>
     </div>
   );
 }
