@@ -34,6 +34,10 @@ export const authUser = (dispatch: Function) => async ({
   }
 };
 
+export const resetAuthError = (dispatch: Function) => async () => {
+  dispatch({ type: actionTypes.RESET_AUTH_ERROR });
+};
+
 export const fetchUserToken = (dispatch: Function) => async () => {
   const cookie = Cookies.get('AUTH_JWT_TOKEN');
   const result = !cookie || cookie === 'false' ? undefined : cookie;

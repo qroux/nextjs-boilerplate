@@ -5,7 +5,7 @@ import {
   Button,
   Typography,
 } from '@material-ui/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SendIcon from '@material-ui/icons/Send';
 import { Context as AuthContext } from '../globalState/context/AuthContext';
 import { useContext } from 'react';
@@ -20,8 +20,15 @@ export default function AuthForm({
   const [password, setPassword] = useState('');
   const {
     authUser,
+    resetAuthError,
     state: { errorMsg },
   } = useContext(AuthContext);
+
+  useEffect(() => {
+    return function cleanUpErrors() {
+      resetAuthError();
+    };
+  }, []);
 
   const onSubmitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
