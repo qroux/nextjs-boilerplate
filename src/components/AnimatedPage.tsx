@@ -1,19 +1,15 @@
 import { motion } from 'framer-motion';
 import { Animations } from '../../styles/animations';
+import { Container } from '@material-ui/core';
 
-export default function AnimatedPage({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AnimatedPage({ children }: { children: any }) {
   return (
     <motion.div
       variants={Animations.pageTransition}
       initial={'hidden'}
       animate={'visible'}
-      exit={'exit'}
-      style={{ boxSizing: 'border-box', padding: '1rem 2rem' }}>
-      {children}
+      exit={'exit'}>
+      <Container maxWidth='xl'>{children}</Container>
     </motion.div>
   );
 }

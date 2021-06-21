@@ -6,6 +6,7 @@ import {
   Button,
   FormControlLabel,
   Switch,
+  Container,
 } from '@material-ui/core';
 import { useContext } from 'react';
 import { Context as AppContext } from '../globalState/context/AppContext';

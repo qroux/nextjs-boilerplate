@@ -16,12 +16,11 @@ export default function AuthForm({
 }: {
   type?: formTypes;
 }) {
-  const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {
     authUser,
-    state: { errorMsg, token },
+    state: { errorMsg },
   } = useContext(AuthContext);
 
   const onSubmitHandler = (e: React.SyntheticEvent) => {

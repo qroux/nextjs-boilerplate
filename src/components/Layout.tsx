@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Cookies from 'js-cookie';
 
-export default function Layout({ children }: { children: ReactNode }) {
+function Layout({ children }: { children: ReactNode }) {
   const {
     state: { darkMode },
     switchTheme,
@@ -36,3 +36,5 @@ export default function Layout({ children }: { children: ReactNode }) {
     </ThemeProvider>
   );
 }
+
+export default Layout;

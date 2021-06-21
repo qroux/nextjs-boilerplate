@@ -6,7 +6,7 @@ import AnimatedPage from '../src/components/AnimatedPage';
 import { Context as AuthContext } from '../src/globalState/context/AuthContext';
 import { Context as AppContext } from '../src/globalState/context/AppContext';
 import StateCheck from '../src/components/StateCheck';
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 
 export default function Home() {
   const {
@@ -26,13 +26,10 @@ export default function Home() {
     <AnimatedPage>
       <div
         style={{
-          minHeight: '100vh',
-          padding: '0 0.5rem',
           display: 'flex',
-          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          minHeight: '80vh',
         }}>
         <Head>
           <title>Create Next App</title>
@@ -40,15 +37,7 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
 
-        <main
-          style={{
-            padding: '5rem 0',
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+        <main style={{}}>
           <h1>
             Welcome to{' '}
             <a
@@ -67,15 +56,24 @@ export default function Home() {
             style={{
               display: 'flex',
               justifyContent: 'space-between',
-              width: '12rem',
+              alignItems: 'center',
+              paddingTop: '2rem',
+              flexDirection: 'column',
             }}>
+            <Typography variant='h6'>Transition test + Auth Flow</Typography>
             <Link href='/login' passHref>
-              <Button variant='contained' name='login'>
+              <Button
+                variant='contained'
+                name='login'
+                style={{ width: '10rem' }}>
                 Login
               </Button>
             </Link>
             <Link href='/register' passHref>
-              <Button variant='contained' name='register'>
+              <Button
+                variant='contained'
+                name='register'
+                style={{ width: '10rem', marginTop: '0.5rem' }}>
                 Register
               </Button>
             </Link>

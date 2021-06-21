@@ -1,3 +1,4 @@
+import { Container } from '@material-ui/core';
 import AnimatedPage from '../src/components/AnimatedPage';
 import AuthForm from '../src/components/AuthForm';
 
