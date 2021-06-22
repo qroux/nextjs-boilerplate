@@ -1,10 +1,11 @@
-import { Typography } from '@material-ui/core';
+import { Typography, Container } from '@material-ui/core';
 import AuthForm from './AuthForm';
 import { formTypes } from './types/formTypes';
 
 function AuthPage({ type }: { type?: formTypes }) {
   return (
-    <div
+    <Container
+      disableGutters={true}
       style={{
         display: 'flex',
         minHeight: '95vh',
@@ -20,7 +21,7 @@ function AuthPage({ type }: { type?: formTypes }) {
           clipPath: 'polygon(0 0, 100% 0%, 95% 100%, 0% 100%)',
         }}></div>
       <AuthForm type={type} />
-    </div>
+    </Container>
   );
 }
 
