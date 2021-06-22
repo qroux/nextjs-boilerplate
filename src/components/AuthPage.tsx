@@ -10,6 +10,7 @@ function AuthPage({ type }: { type?: formTypes }) {
       style={{
         display: 'flex',
         minHeight: '95vh',
+        width: '100vw'
       }}>
       <div
         style={{
