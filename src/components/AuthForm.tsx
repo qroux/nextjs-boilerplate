@@ -4,6 +4,7 @@ import {
   Icon,
   Button,
   Typography,
+  makeStyles,
 } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import SendIcon from '@material-ui/icons/Send';
@@ -11,11 +12,32 @@ import { Context as AuthContext } from '../globalState/context/AuthContext';
 import { useContext } from 'react';
 import { formTypes } from './types/formTypes';
 
+const useStyles = makeStyles((theme) => ({
+  rightPanel: {
+    [theme.breakpoints.down('xl')]: {
+      flex: 0.3,
+    },
+    [theme.breakpoints.down('lg')]: {
+      flex: 0.3,
+    },
+    [theme.breakpoints.down('md')]: {
+      flex: 0.4,
+    },
+    [theme.breakpoints.down('sm')]: {
+      flex: 0.8,
+    },
+    [theme.breakpoints.down('xs')]: {
+      flex: 1,
+    },
+  },
+}));
+
 export default function AuthForm({
   type = formTypes.LOGIN,
 }: {
   type?: formTypes;
 }) {
+  const classes = useStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {
@@ -39,12 +61,12 @@ export default function AuthForm({
 
   return (
     <div
+      className={classes.rightPanel}
       style={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        flex: 0.3,
       }}>
       <Typography variant='h4' color='textPrimary'>
         {type}
