@@ -5,7 +5,6 @@ import { formTypes } from './types/formTypes';
 function AuthPage({ type }: { type?: formTypes }) {
   return (
     <Container
-      maxWidth='xl'
       disableGutters={true}
       style={{
         display: 'flex',
