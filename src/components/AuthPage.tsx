@@ -5,12 +5,11 @@ import { formTypes } from './types/formTypes';
 function AuthPage({ type }: { type?: formTypes }) {
   return (
     <Container
-      maxWidth='xl'
+      maxWidth={false}
       disableGutters={true}
       style={{
         display: 'flex',
-        minHeight: '95vh',
-        width: '100vw'
+        minHeight: '97vh',
       }}>
       <div
         style={{

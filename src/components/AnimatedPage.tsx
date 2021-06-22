@@ -10,7 +10,7 @@ export default function AnimatedPage({ children }: { children: any }) {
       animate={'visible'}
       exit={'exit'}>
       <Container
-        maxWidth='xl'
+        maxWidth={false}
         disableGutters={true}
         style={{ minHeight: '95vh' }}>
         {children}
