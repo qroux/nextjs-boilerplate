@@ -85,7 +85,11 @@ export default function AuthForm({
           <FormControl fullWidth={true}>
             <TextField
               required
-              id='email-input'
+              inputProps={{
+                autoComplete:
+                  type === formTypes.LOGIN ? 'current-email' : 'new-email',
+              }}
+              id={type === formTypes.LOGIN ? 'current-email' : 'new-email'}
               label='Email'
               type='email'
               variant='outlined'
@@ -95,7 +99,15 @@ export default function AuthForm({
             />
             <TextField
               required
-              id='password-input'
+              inputProps={{
+                autoComplete:
+                  type === formTypes.LOGIN
+                    ? 'current-password'
+                    : 'new-password',
+              }}
+              id={
+                type === formTypes.LOGIN ? 'current-password' : 'new-password'
+              }
               label='Password'
               type='password'
               variant='outlined'
@@ -111,7 +123,7 @@ export default function AuthForm({
               color='secondary'
               style={{ marginTop: '3rem' }}
               startIcon={<SendIcon />}>
-              Register
+              {type === formTypes.LOGIN ? 'Login' : 'Register'}
             </Button>
           </FormControl>
         </form>

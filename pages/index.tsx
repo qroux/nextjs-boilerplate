@@ -6,7 +6,7 @@ import AnimatedPage from '../src/components/AnimatedPage';
 import { Context as AuthContext } from '../src/globalState/context/AuthContext';
 import { Context as AppContext } from '../src/globalState/context/AppContext';
 import StateCheck from '../src/components/StateCheck';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Container, Typography } from '@material-ui/core';
 
 export default function Home() {
   const {
@@ -37,21 +37,7 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
 
-        <main style={{}}>
-          <h1>
-            Welcome to{' '}
-            <a
-              style={{ color: '#0070f3', textDecoration: 'none' }}
-              href='https://nextjs.org'>
-              Next.js!
-            </a>
-          </h1>
-
-          <div style={{ width: '15 rem' }}>
-            <StateCheck state={token} label={'Token: ' + token} />
-            <StateCheck state={darkMode} label='Dark Mode' />
-          </div>
-
+        <Container maxWidth='xl'>
           <div
             style={{
               display: 'flex',
@@ -60,6 +46,24 @@ export default function Home() {
               paddingTop: '2rem',
               flexDirection: 'column',
             }}>
+            <h1>
+              Welcome to{' '}
+              <a
+                style={{ color: '#0070f3', textDecoration: 'none' }}
+                href='https://nextjs.org'>
+                Next.js!
+              </a>
+            </h1>
+
+            <div
+              style={{
+                width: '15 rem',
+                overflow: 'hidden',
+                marginBottom: '1rem',
+              }}>
+              <StateCheck state={token} label={'Token: ' + token} />
+              <StateCheck state={darkMode} label='Dark Mode' />
+            </div>
             <Typography variant='h6'>Transition test + Auth Flow</Typography>
             <Link href='/login' passHref>
               <Button
@@ -80,7 +84,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-        </main>
+        </Container>
       </div>
     </AnimatedPage>
   );

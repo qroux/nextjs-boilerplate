@@ -9,15 +9,15 @@ context('Actions', () => {
       expect(path.href).to.eql('http://localhost:3000/register');
     });
 
-    cy.get('#email-input').should('exist');
-    cy.get('#email-input').type('test');
-    cy.get('#password-input').type('test');
+    cy.get('#new-email').should('exist');
+    cy.get('#new-email').type('test');
+    cy.get('#new-password').type('test');
     cy.get('form').submit();
 
     cy.visit('/login');
-    cy.get('#email-input').should('exist');
-    cy.get('#email-input').type('test');
-    cy.get('#password-input').type('test');
+    cy.get('#current-email').should('exist');
+    cy.get('#current-email').type('test');
+    cy.get('#current-password').type('test');
     cy.get('form').submit();
 
     cy.location().should((path) => {
