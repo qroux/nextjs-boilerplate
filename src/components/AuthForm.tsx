@@ -69,7 +69,12 @@ export default function AuthForm({
 
     return (
       <Link href={path} passHref>
-        <Button color='inherit' disableRipple={true} disableElevation={true}>
+        <Button
+          size='large'
+          color='inherit'
+          style={{ marginTop: '1rem' }}
+          disableRipple={true}
+          disableElevation={true}>
           {msg}
         </Button>
       </Link>
