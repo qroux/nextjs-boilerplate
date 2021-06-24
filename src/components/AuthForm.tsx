@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   FormControl,
   TextField,
@@ -57,6 +58,22 @@ export default function AuthForm({
     if (email && password) {
       authUser({ email, password, type });
     }
+  };
+
+  const renderButton = () => {
+    const path = type === formTypes.LOGIN ? '/register' : '/login';
+    const msg =
+      type === formTypes.LOGIN
+        ? 'Not registered yet ?'
+        : 'Already got an account ?';
+
+    return (
+      <Link href={path} passHref>
+        <Button color='inherit' disableRipple={true} disableElevation={true}>
+          {msg}
+        </Button>
+      </Link>
+    );
   };
 
   return (
@@ -128,6 +145,7 @@ export default function AuthForm({
           </FormControl>
         </form>
       </div>
+      {renderButton()}
     </div>
   );
 }
